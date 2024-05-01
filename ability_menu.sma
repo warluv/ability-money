@@ -187,3 +187,21 @@ MainMenu_Show(id)
     MainMenu_Show(id);
     return PLUGIN_HANDLED;
 }
+
+public plugin_natives()
+{
+    register_native("open_ability_menu", "@native_open_ability_menu");
+}
+
+@native_open_ability_menu(plugin, argc)
+{
+    enum { arg_player = 1 };
+
+    new player = get_param(arg_player);
+
+    if (!is_user_connected(player))
+        return false;
+
+    MainMenu_Show(id);
+    return true;
+}
