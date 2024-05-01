@@ -202,6 +202,6 @@ public plugin_natives()
     if (!is_user_connected(player))
         return false;
 
-    MainMenu_Show(id);
+    MainMenu_Show(player);
     return true;
 }
